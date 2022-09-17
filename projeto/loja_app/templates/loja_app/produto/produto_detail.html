@@ -5,8 +5,12 @@
 
 {% block content %}
     <h2>O produto</h2>
-    {{object.nome}}
+    <p>{{object.nome}}</p>
+    <p>{{object.preco}}</p>
+    <p>{{object.descricao}}</p>
+    <p>{{object.marca}}</p>
 
     <a href="{% url 'loja_app:delete-produto' object.pk %}"><button>Deletar</button></a>
     <a href="{% url 'loja_app:update-produto' object.pk %}"><button>Atualizar</button></a>
+    <p><a href="{% url 'loja_app:list-produto' %}"><button>Voltar</button></a></p>
 {% endblock content %}

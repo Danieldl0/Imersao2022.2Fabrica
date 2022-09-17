@@ -4,16 +4,43 @@
 
 {% block content %}
     
-    <a href="{% url 'loja_app:create-produto'%}"><button>Cadastrar +</button></a>
+    <a href="{% url 'loja_app:create-produto'%}"><button>Produto +</button></a>
+    <a href="{% url 'loja_app:create-marca'%}"><button>Marca +</button></a>
+
 
     <h2>Lista das Produtos</h2>
-    {% for produto in object_list %}
-    
-        <a href="{% url 'loja_app:detail-produto' produto.id %}">
-            <p>{{produto}}</p>
-        </a>
-        <p>--</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Marca</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        {% for produto in object_list %}
+        <tbody>
+            <tr>
+                <td>
+                    <a href="{% url 'loja_app:detail-produto' produto.id %}">
+                        {{produto.nome}}
+                    </a>
+                </td>
+                <td>
+                    {{produto.preco}}
+                </td>
+                <td>
+                    {{produto.marca}}
+                </td>
+                <td>
+                    <a href="{% url 'loja_app:delete-produto' produto.id %}"><button>Deletar</button></a>
+                    <a href="{% url 'loja_app:update-produto' produto.id %}"><button>Atualizar</button></a>
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
 
-    {% endfor %}
+    </table>
+
 
 {% endblock content %}

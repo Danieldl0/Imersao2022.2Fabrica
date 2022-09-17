@@ -18,7 +18,7 @@ class CreateMarcaView(CreateView):
     model = Marca
     fields = '__all__'
     template_name = 'loja_app/marca/marca_form.html'
-    success_url = reverse_lazy('loja_app:list-marca')
+    success_url = reverse_lazy('loja_app:list-produto')
 
 
 class ListProdutoView(ListView):
