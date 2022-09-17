@@ -1,0 +1,25 @@
+{% extends 'loja_app/base.html' %}
+{% load static %}
+
+{% block title %}Cadastro{% endblock title %}
+
+{% block content %}
+
+    <h1>Cadastro Marca</h1>
+    <div>
+
+        <div>
+            <div id="result"></div>
+            <form id="form" name="form" method="POST">
+                {% csrf_token %}
+                <div >{{ form.as_p }}</div>
+                <button type="submit">Enviar</button>
+            </form>
+            <a href="{%url 'loja_app:list-marca'%}">
+                <button >Voltar</button>
+            </a>
+        </div>
+        
+    </div>
+    
+{% endblock content %}

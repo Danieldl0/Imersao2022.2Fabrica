@@ -1,0 +1,12 @@
+{% extends 'loja_app/base.html' %}
+
+{% block title %}{{object}}{% endblock title %}
+
+
+{% block content %}
+    <h2>O produto</h2>
+    {{object.nome}}
+
+    <a href="{% url 'loja_app:delete-produto' object.pk %}"><button>Deletar</button></a>
+    <a href="{% url 'loja_app:update-produto' object.pk %}"><button>Atualizar</button></a>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'loja_app/base.html' %}
+
+{% block title %}Marca{% endblock title %}
+
+{% block body %}
+    <h2>Lista das Marca</h2>
+    {% for marca in object_list %}
+    
+        <p>{{marca}}</p>
+        <p>--</p>
+
+    {% endfor %}
+
+{% endblock body %}
